@@ -41,22 +41,23 @@ if(isset($_POST['edit'])){
         <input type="hidden" value="<?= $produk['id'] ?>" name="id">
     <div class="row mt-3">
         <label for="nama" class="col-4" col-form-label" >Nama Produk</label>
-        <input type="text" class="form-control col-8 col-form-label" name="nama" id="nama" value="<?= $produk['nama_produk'] ?>">
+        <input type="text" class="form-control col-8 col-form-label" name="nama" id="nama" value="<?= $produk['nama_produk'] ?>" autocomplete="off" required>
         </div>
     <div class="row mt-3">
         <label for="keterangan" class="col-4" col-form-label" >Keterangan produk</label>
-        <input type="text" class="form-control col-8 col-form-label"  name="keterangan" id="keterangan" value="<?= $produk['keterangan'] ?>">
+        <input type="text" class="form-control col-8 col-form-label"  name="keterangan" id="keterangan" value="<?= $produk['keterangan'] ?>" autocomplete="off" required>
         </div>
     <div class="row mt-3">
         <label for="harga" class="col-4" col-form-label" >Harga Produk</label>
-        <input type="number" class="form-control col-8 col-form-label"  name="harga" id="harga" value="<?= $produk['harga'] ?>">
+        <input type="number" class="form-control col-8 col-form-label"  name="harga" id="harga" value="<?= $produk['harga'] ?>" required>
         </div>
     <div class="row mt-3">
         <label for="jumlah" class="col-4" col-form-label" >Jumlah Produk</label>
-        <input type="number" class="form-control col-8 col-form-label" name="jumlah" id="jumlah" value="<?= $produk['jumlah'] ?>">
+        <input type="number" class="form-control col-8 col-form-label" name="jumlah" id="jumlah" value="<?= $produk['jumlah'] ?>" required>
     </div>
     <div class="row justify-content-center m-4">
-        <button name="edit" class="btn btn-outline-primary col-6 col-form-label center">Edit produk</button>
+        <button name="edit" class="btn btn-outline-primary col-5 col-form-label center mr-2">Edit produk</button>
+        <a href="index.php" class="btn btn-outline-primary col-5 col-form-label center">Kembali</a>
     </div>
     </form>
 </div>

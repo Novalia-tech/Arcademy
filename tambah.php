@@ -1,6 +1,11 @@
 <?php 
 require 'function.php';
 
+// if(empty($_POST['nama']) || empty($_POST['keterangan']) || empty($_POST['harga']) || empty($_POST['jumlah'])){
+//     $error = "<h3 style='color:red;'> Data tidak boleh kosong</h3>";
+//     return false;
+// }
+
 if(isset($_POST["tambah"])){
     if(tambah($_POST) == 1){
         echo "<script>
@@ -14,7 +19,6 @@ if(isset($_POST["tambah"])){
         </script>";
     }
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -39,22 +43,23 @@ if(isset($_POST["tambah"])){
         <input type="hidden" value="<?= $produk['id'] ?>" name="id">
     <div class="row mt-3">
         <label for="nama" class="col-4" col-form-label" >Nama Produk</label>
-        <input type="text" class="form-control col-8 col-form-label" name="nama" id="nama">
+        <input type="text" class="form-control col-8 col-form-label" name="nama" id="nama"  autocomplete="off" required>
         </div>
     <div class="row mt-3">
         <label for="keterangan" class="col-4" col-form-label" >Keterangan produk</label>
-        <input type="text" class="form-control col-8 col-form-label"  name="keterangan" id="keterangan">
+        <input type="text" class="form-control col-8 col-form-label"  name="keterangan" id="keterangan" autocomplete="off" required>
         </div>
     <div class="row mt-3">
         <label for="harga" class="col-4" col-form-label" >Harga Produk</label>
-        <input type="number" class="form-control col-8 col-form-label"  name="harga" id="harga">
+        <input type="number" class="form-control col-8 col-form-label"  name="harga" id="harga" required>
         </div>
     <div class="row mt-3">
         <label for="jumlah" class="col-4" col-form-label" >Jumlah Produk</label>
-        <input type="number" class="form-control col-8 col-form-label" name="jumlah" id="jumlah">
+        <input type="number" class="form-control col-8 col-form-label" name="jumlah" id="jumlah" required>
     </div>
     <div class="row justify-content-center mt-5">
-        <button name="tambah" class="btn btn-outline-light col-6 col-form-label center">Tambah Data produk</button>
+        <button name="tambah" class="btn btn-outline-light col-6 col-form-label center mr-3">Tambah Data produk</button>
+        <a href="index.php" class="btn btn-outline-light col-4 col-form-label center">Kembali</a>
     </div>
     </form>
 </div>
